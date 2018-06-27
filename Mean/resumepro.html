@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html ng-app="AJAX">
+<head>
+	<title>Resume</title>
+	<script src="angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="resumepro.css">
+
+	<script src="angular.min.js"></script>
+  <script>
+  angular.module("AJAX",[]).
+  controller("myctrl",function($scope,$http){
+    $scope.Insert= function(){
+      $http({
+        url:"/post",
+        data:{
+          Name:$scope.Name,
+          Email:$scope.Email,
+          PhoneNumber:$scope.PhoneNumber,
+          Comments:$scope.Comments,
+
+  },
+        method:"POST"
+      }).then(function(output){
+        alert(JSON.stringify(output));
+        $scope.capital=output.capital;
+        
+      });
+
+    }
+  });
+  </script>
+
+</head>
+<body ng-controller="myctrl">
+	<ul class="ul">
+  <li class="li"><a class="active" href="resumepro.html">Home</a></li>
+  <li class="li"><a href="#education">Education</a></li>
+  <li class="li"><a href="#aof">Area Of Interest</a></li>
+  <li class="li"><a href="#pro">Projects</a></li>
+  <li class="li"><a href="#tech">Technical Skills</a></li>
+  <li class="li"><a href="#str">Strength</a></li>
+  <li class="li"><a href="#ach">Achievements</a></li>
+  <li class="li"><a href="#Key">Key Courses</a></li>
+  <li class="li"><a href="#ext">Extra Curriculars</a></li>
+  <li class="li"><a href="#per">Personal Details</a></li>
+  <li class="li"><a href="#con">Contact</a></li>
+</ul>
+<div class="container">
+<div class="head">
+	<img src="logo.gif" width="160" height="150" align="left" style="border-radius: 100px" style="padding-left: 10px" /></div>
+	<div class="head1">
+<img src="profile.png" width="125" height="150" align="right" /></div>
+
+	<div class="text">
+		<center>
+		<p><b>Nethra V</b><br>
+		Information Technology<br>
+		Mobile: +91 9597463479<br>
+	Email:<a href="https://www.gmail.com" target="_blank">nethra.1505104@srec.ac.in</a><br>
+	Linked-in:<a href="https://www.linkedin.com" target="_blank">nethra-viswanath-b05a03165/</a><br><br><br><br><hr>
+</p>
+</center>
+</div><div id="education"><b>
+<p class="para">Education</p></b>
+
+<center>
+<table border="1" width="80%" height="50%">
+	<tr>
+		<td>Year</td>
+		<td>Degree/Certificate</td>
+		<td>Institute/School</td>
+		<td>CGPA/Percentage</td>
+	</tr>
+	<tr>
+		<td>2015-Present</td>
+		<td>B.Tech IT</td>
+		<td>Sri Ramakrishna Engineering College</td>
+		<td>7.38</td>
+	</tr>
+	<tr>
+		<td>2015</td>
+		<td>HSC</td>
+		<td>Avila Convent Higher Secondary School</td>
+		<td>92.58%</td>
+	</tr>
+	<tr>
+		<td>2013</td>
+		<td>SSLC</td>
+		<td>Avila Convent Higher Secondary School</td>
+		<td>92%</td>
+	</tr>
+</table>
+</center></div>
+<br>
+<hr>
+<div id="aof">
+<p class="para"><b>Area Of Interest</b></p>
+	<ul class="aoi">
+		<li class="l">Web Development</li>
+	</ul>
+	</div>
+	<br><hr>
+
+<div id="pro">
+<p class="para"><b>Projects</b></p>
+<ul>
+	<li>CRUD with Auto Complete<br>
+	<i>Mrs.J.Bagyalakshimi,MCA<br>
+	E-Commerce website to Create,Read,Update,Delete products.</i></li>
+
+	<li>Student Management System<br>
+	<i>Mrs.N.Saranya AP(Sr.Gr),Dept of IT<br>
+	Manage student details such as marks,attendance,extra-curricular.</i></li>
+
+	<li>Smart Health Application<br>
+	<i>Dr.J.Anitha,Associate Professor,Dept of IT<br>
+	To calculate calorie count and provide suggestions accordingly</i></li>
+</ul>
+</div>
+<br>
+<hr>
+<div id="tech">
+<p class="para"><b>Technical Skills</b></p>
+<ul>
+	<li>Web Technologies:HTML,CSS,JavaScript</li>
+	<li>Programming Language:C,C++</li>
+	<li>Database Management:mySQL,MongoDB</li>
+	<li>Miscellaneous:Android Programming</li>
+	<li>Operating System:Windows</li>
+</ul>
+</div>
+<br>
+<hr>
+<div id="str">
+<p class="para"><b>Strength</b></p>
+<ul>
+	<li>Good English Proficiency</li>
+	<li>Problem Solving</li>
+	<li>Optimistic</li>
+</ul>
+</div>
+<br>
+<hr>
+<div id="ach">
+<p class="para"><b>Achievement</b></p>
+<ul>
+	<li>Participated in a 24 hour New India Championship 2018 and secured 13th rank National Wide.</li>
+	<li>
+Completed the July 2017 edition of Introduction to Modern Application Development, offered by IIT Madras and Hasura and successfully cleared the online examination. </li>
+<li>Completed a "Corporate Training Test" based on placement Aptitude Questions by CodeBind Technologies,Coimbatore.</li>
+</ul>
+</div>
+<br>
+<hr>
+<div id="Inp">
+<p class="para"><b>Inplant Training</b></p>
+<ul>
+	<li>CodeBind Technologies,Coimbatore
+		<i>Web Development</i></li>
+</ul>
+</div>
+<br>
+<hr>
+<div id="Key">
+<p class="para"><b>Key Courses Taken</b></p>
+NPTEL:
+<ul>
+	<li>"Introduction to Modern Application Development" with a consolidated score of   71%.</li>
+	<li>"Developing Soft Skills and Personality" with a consolidated score of 80%.</li>
+</ul>
+</div>
+<br>
+<hr>
+<div id="ext">
+<p class="para"><b>Extra Curriculars</b></p>
+<ul>
+	<li>Attended a one day hands-on workshop on "Security Forensics"  conducted by Wikitecky and Microsoft Research Community Group.</li>
+<li>Attended a one day seminar on "An Initiative Towards Internet of Things" organized by IEEE Student Branch at Sri Ramakrishna College,Coimbatore on 28th July 2017.</li>
+<li>Attended a two day workshop on "Digital Marketing" organised by SNS College of Technologies, Coimbatore.</li>
+<li>Attended a one day workshop on "Mobile Application Development using Android" conducted by SDISC.</li>
+<li>Attended a one day workshop on "Android" conducted by CodeBind Technologies.</li>
+<li>Attended a one day hands-on training on "Photoshop and Animation" conducted by SNS College of Technologies.</li>
+</ul>
+</div>
+<br>
+<hr>
+<div id="per">
+<p class="para"><b>Personal Details</b></p>
+<center>
+<table border="1" width="50%">
+	<tr>
+		<td>DOB</td>
+		<td>29-01-1998</td>
+	</tr>
+	<tr>
+		<td>Languages Known</td>
+		<td>English, Tamil,Hindi,Malayalam,French.</td>
+	</tr>
+	<tr>
+		<td>Address</td>
+		<td>16 Annamalaiyar Avenue Phase II,Chitra Nagar,Saravanampatty,Coimbatore-641035</td>
+	</tr>
+</table>
+</center>
+</div>
+<br>
+<br>
+<br><b>
+<p style="text-align: left">Place:Coimbatore
+</p>
+<p style="text-align: left">Date:</p>
+<p style="text-align: right">(Nethra .V)</p></b><br>
+<hr>
+<div id="con">
+<p class="para"><b>Contact</b></p>
+<center>
+<div class="mapouter"><div class="gmap_canvas"><iframe width="842" height="355" id="gmap_canvas" src="https://maps.google.com/maps?q=Amman%20kovil%20saravanampatty&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.webdesign-muenchen-pb.de"></a></div><style>.mapouter{text-align:right;height:355px;width:842px;}.gmap_canvas {overflow:hidden;background:none!important;height:355px;width:842px;}</style></div>
+</center>
+</div>
+<br>
+<br>
+<br>
+<div class="com"><center>
+<h3>Comment</h3>
+<form>
+	Name:<input type="text" ng-model="Name" />
+	Email:<input type="text" ng-model="Email" />
+	PhoneNumber:<input type="text" ng-model="PhoneNumber" />
+	Comments:<input type="text" ng-model="Comments" /><br>
+	<input type="button" ng-model="Button" value="Submit" ng-click="Insert()" />
+</form>
+</center>
+</div>
+</div>
+</body>
+</html>

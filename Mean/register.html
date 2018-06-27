@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html ng-app="AJAX">
+<head>
+	<title>Login Form</title>
+	<script src="../angular.min.js"></script>
+<script>
+	angular.module("AJAX",[]).controller("AJAXController",function($scope,$http){
+		$scope.getInfo=function(){
+			$http({
+				url:"/authenticate",
+				data:{
+					name:$scope.name,
+					password:$scope.password
+
+				},
+				method:"POST"
+			}).success(function(output){
+				alert(JSON.stringify(output));
+				$scope.capital=output.capital;
+			});
+		}	
+	});
+		
+	</script>
+	<style type="text/css">
+		.c1{
+
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0 0 10px;
+		}
+		.c1 input{
+	display: block;
+	height: 6px 10px;
+	width: 20%;
+}
+		.class{
+			padding: 200px;
+			
+		}
+		.c2 input{
+			display: block;
+	height: 6px 10px;
+	width: 6%;
+		}
+	</style>
+
+</head>
+<body ng-controller="AJAXController">
+	<center>
+		<div class="class">
+		<div class="c1">
+	<label>Name:
+	</label>
+	<input type="text" ng-model="name" ><br>
+	
+	</div>
+	<div class="c1">
+
+	<label>Password:</label>
+	<input type="password" ng-model="password"><br></div>
+	<div class="c2">
+	<input type="button" ng-model="submit" value="Submit"><br></div>
+	<p>{{capital}}</p>
+</div>
+</center>
+
+
+</body>
+</html>
